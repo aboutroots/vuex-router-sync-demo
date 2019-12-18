@@ -21,11 +21,12 @@
 export default {
   data() {
     return {
+      // normally this comes from backend API!! this is just for text
       event: {
         id: 1,
         date: 'Aug 19, 2018',
         time: '6:00',
-        title: 'Park Cleanup',
+        title: 'Click me',
         attendees: [
           {
             id: 'asdf',

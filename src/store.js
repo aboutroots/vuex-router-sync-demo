@@ -5,20 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count: 0
+    count: 0,
+    proj: {}
   },
-  mutations: {
-    increment(state) {
-      state.count++
-    },
-    increment2(state) {
-      const oldValue = parseInt(state.route.query.counter2) || 0
-      router.push({
-        query: {
-          counter2: oldValue + 1
-        }
-      })
-    }
+  getters: {
+    counter: state => state.count,
+    counter2: state => state.route.query.counter2
   },
   actions: {
     increment({ commit }) {
@@ -30,6 +22,20 @@ export default new Vuex.Store({
       setTimeout(() => {
         commit('increment2')
       }, 400)
+    }
+  },
+  mutations: {
+    increment(state) {
+      state.count++
+      state.proj = { x: 5 }
+    },
+    increment2(state) {
+      const oldValue = parseInt(state.route.query.counter2) || 0
+      router.push({
+        query: {
+          counter2: oldValue + 1
+        }
+      })
     }
   }
 })
