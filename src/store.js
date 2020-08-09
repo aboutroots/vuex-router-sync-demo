@@ -16,12 +16,14 @@ export default new Vuex.Store({
     increment({ commit }) {
       setTimeout(() => {
         commit('increment')
-      }, 400)
+        // set some timeout here for better visibility
+      }, 0)
     },
     increment2({ commit }) {
       setTimeout(() => {
         commit('increment2')
-      }, 400)
+        // set some timeout here for better visibility
+      }, 0)
     }
   },
   mutations: {
